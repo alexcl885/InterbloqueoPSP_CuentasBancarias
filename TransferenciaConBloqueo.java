@@ -10,9 +10,10 @@ public class TransferenciaConBloqueo {
         System.out.println("SALDO 2 ->"+c2.getSaldo());
 
         Transferencia transferencia = new Transferencia();
+        GestorTransferencias gestorTransferencias = new GestorTransferencias();
         //creacion de hilos
-        Hilo h1 = new Hilo("Alejandro Copado", transferencia, c1, c2);
-        Hilo h2 = new Hilo("Copado Alejandro", transferencia, c2, c1);
+        Hilo h1 = new Hilo("Alejandro Copado", transferencia,gestorTransferencias ,c1, c2);
+        Hilo h2 = new Hilo("Copado Alejandro", transferencia, gestorTransferencias,c2, c1);
         
         //iniciamos los hilos
         h1.start();
